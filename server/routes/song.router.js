@@ -28,7 +28,7 @@ const pool = new Pool({
 // get info from the server
 router.get('/', (req, res) => {
   console.log(`In /songs GET`);
-  const queryText = `SELECT * FROM "songs";`;
+  const queryText = `SELECT * FROM "songs" ORDER BY "title";`;
   pool
     .query(queryText)
     .then((dbResponse) => {
