@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const pg = require('pg');
+const pool = require('../public/modules/pool');
 
-const Pool = pg.Pool; // Class
+// const Pool = pg.Pool; // Class
 
-// Connect Node to our database
-const pool = new Pool({
-  database: 'jazzy_ajax', // name of our database
-  host: 'localhost', // where is your database?
-  port: 5432, // this is the default port
-  max: 10, // number of connections
-  idleTimeoutMillis: 10000, // 10 seconds
-});
+// // Connect Node to our database
+// const pool = new Pool({
+//   database: 'jazzy_ajax', // name of our database
+//   host: 'localhost', // where is your database?
+//   port: 5432, // this is the default port
+//   max: 10, // number of connections
+//   idleTimeoutMillis: 10000, // 10 seconds
+// });
 
 router.get('/', (req, res) => {
   console.log(`In /artist GET`);

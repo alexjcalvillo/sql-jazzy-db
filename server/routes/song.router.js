@@ -1,16 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pg = require('pg');
-
-const Pool = pg.Pool;
-
-const pool = new Pool({
-  database: 'jazzy_ajax',
-  host: 'localhost',
-  port: 5432,
-  max: 10,
-  idleTimeoutMillis: 30000,
-});
+const pool = require('../public/modules/pool');
 // static content. this will be replaced with a database table
 // const songListArray = [
 //   {
