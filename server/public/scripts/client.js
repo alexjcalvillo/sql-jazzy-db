@@ -65,6 +65,7 @@ function sendSongToServer() {
     title: $('#song-name').val(),
     length: $('#song-length').val(),
     date_released: $('#date-released').val(),
+    album: $('#album').val(),
   };
 
   console.log(songToSend);
@@ -99,6 +100,7 @@ function getSongData() {
                                             <td>${song.title}</td>
                                             <td>${song.length}</td>
                                             <td>${song.date_released}</td>
+                                            <td>${song.album}</td>
                                           </tr>`);
       }
     })

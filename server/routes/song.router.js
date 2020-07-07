@@ -44,10 +44,15 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const songs = req.body;
-  const queryText = `INSERT INTO "songs" ("title", "length", "date_released")
-VALUES ($1, $2, $3);`;
+  const queryText = `INSERT INTO "songs" ("title", "length", "date_released", "album")
+VALUES ($1, $2, $3, $4);`;
   pool
-    .query(queryText, [songs.title, songs.length, songs.date_released])
+    .query(queryText, [
+      songs.title,
+      songs.length,
+      songs.date_released,
+      songs.album,
+    ])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.sendStatus(201);
