@@ -52,7 +52,9 @@ function getArtistData() {
         // Append each artist to the table
         $('#artistTableBody').append(`<tr>
                                             <td>${artist.artist_name}</td>
-                                            <td>${artist.year_born}</td>
+                                            <td>${moment(
+                                              artist.year_born
+                                            ).format('MM-DD-YYYY')}</td>
                                           </tr>`);
       }
     })
@@ -98,12 +100,13 @@ function getSongData() {
       $('#songTableBody').empty();
       for (let song of listOfSongs) {
         // Append each song to the table
-        $('#songTableBody').append(`<tr>
-                                            <td>${song.title}</td>
-                                            <td>${song.length}</td>
-                                            <td>${song.date_released}</td>
-                                            <td>${song.album}</td>
-                                          </tr>`);
+        $('#songTableBody').append(`
+        <tr>
+          <td>${song.title}</td>
+          <td>${song.length}</td>
+          <td>${moment(song.date_released).format('MM-DD-YYYY')}</td>
+          <td>${song.album}</td>
+        </tr>`);
       }
     })
     .catch(function (error) {
