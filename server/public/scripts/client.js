@@ -34,6 +34,8 @@ function sendArtistToServer() {
       // unhappy path, something went wrong
       console.log('error in artist post', error);
     });
+
+  resetArtistFields();
 }
 
 // get artist data from the server
@@ -107,4 +109,18 @@ function getSongData() {
     .catch(function (error) {
       console.log('error in song get', error);
     });
+
+  resetSongFields();
+}
+
+function resetArtistFields() {
+  $('#artist-name').val('');
+  $('#artist-born').val('');
+}
+
+function resetSongFields() {
+  $('#song-name').val('');
+  $('#song-length').val('');
+  $('#date-released').val('');
+  $('#album').val('');
 }
