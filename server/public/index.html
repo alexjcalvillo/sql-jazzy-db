@@ -15,7 +15,7 @@
 
     <h1>Get Jazzy Database</h1>
     <div>
-      <h2>Famous Jazz Artists</h2>
+      <h2>Famous Artists</h2>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
           <nav class="navbar-brand mx-auto">
@@ -32,9 +32,9 @@
     <div class="container">
       <main role="main">
         <div class="jumbotron">
-          <div class="col-sm-8 mx-auto">
-            <table>
-              <thead>
+          <div class="col-sm-10 mx-auto">
+            <table class="table-dark table-bordered">
+              <thead class="thead-light">
                 <tr>
                   <th>Name</th>
                   <th>Born</th>
@@ -53,10 +53,10 @@
 
     <hr />
 
-    <h2>Famous Jazz Songs</h2>
+    <h2>Famous Songs</h2>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="form-inline my-2 my-md-0">
-          <nav class="navbar-brand">
+          <div class="container">
+          <nav class="navbar-brand mx-auto">
         <!-- Form for songs goes here -->
           <input type="text" id="song-name" placeholder="Song title" />
           <input type="text" id="song-length" placeholder="Length of song" />
@@ -64,6 +64,7 @@
           <input type="text" id="album" placeholder="Album" />
           <button id="submit-song">Submit Song</button>
           </nav>
+          </div>
         </div>
       </nav>
     </div>
@@ -74,12 +75,13 @@
       <main role="main">
         <div class="jumbotron">
           <div class="col-sm-10 mx-auto">
-            <table class="table">
-              <thead>
+            <table class="table-dark table-bordered">
+              <thead class="thead-light">
                 <tr>
-                  <th>Title</th>
-                  <th>Length of Song</th>
-                  <th>Date Released</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Length of Song</th>
+                  <th scope="col">Date Released</th>
+                  <th>Album</th>
                 </tr>
               </thead>
               <tbody id="songTableBody">
@@ -90,6 +92,7 @@
         </div>
       </main>
     </div>
+    <hr>
 
   </body>
 </html>
